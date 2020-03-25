@@ -1,7 +1,7 @@
 DAYS=$(argvalue days)
 SITES=$(argvalue sites)
 
-if [ -z $DAYS ];then
+if [ -z "$DAYS" ];then
   DAYS=200
 fi
 
