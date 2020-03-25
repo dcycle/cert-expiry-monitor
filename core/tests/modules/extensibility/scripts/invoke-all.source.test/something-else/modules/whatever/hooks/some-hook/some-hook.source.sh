@@ -1,0 +1,1 @@
+echo 'Random hook called'

@@ -1,0 +1,1 @@
+echo 'Core hook called'

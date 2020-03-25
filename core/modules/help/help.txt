@@ -1,0 +1,5 @@
+
+This script was built using the dcBase bash script framework. You are
+seeing this because the developer failed to include custom help text at
+./script/modules/help/help.txt.
+

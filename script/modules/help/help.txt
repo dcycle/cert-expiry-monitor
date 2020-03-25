@@ -1,0 +1,12 @@
+
+Monitor websites for expiring SSL certificates.
+
+Typical usage to check whether one of several domain names will expire in less than 200 days:
+
+./cem.sh check ( \
+  "www.example.com" \
+  "two.example.com" \
+  "three.example.com" \
+  ) 200
+
+Type ./cem.sh usage for more details.

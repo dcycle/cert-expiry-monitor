@@ -1,0 +1,1 @@
+echo "MAIN SCRIPT CALLED WITH $*"
