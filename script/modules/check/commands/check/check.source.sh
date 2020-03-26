@@ -18,7 +18,7 @@ done
 
 if [ -z "$ERR" ]; then
   echo " => "
-  echo " => All sites expire in under $DAYS days."
+  echo " => All sites expire in over $DAYS days."
   echo " =>"
 else
   >&2 echo " => "
