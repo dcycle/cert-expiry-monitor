@@ -25,7 +25,7 @@ else
   >&2 echo " => Some sites expire in less than $DAYS days or have other issues:"
   IFS=';' read -ra ERRARR <<< "$ERR"
   for SITEERR in "${ERRARR[@]}"; do
-    echo "   => $SITEERR"
+    >&2 echo "   => $SITEERR"
   done
   >&2 echo " => "
   exit 1
