@@ -14,7 +14,7 @@ Typical usage to check whether one of several domain names will expire in less t
               |_____  |______ |    \_    |
         _______ _     _  _____  _____  ______ __   __
         |______  \___/  |_____]   |   |_____/   \_/
-        |______ _/   \_ |       __|__ |    \_    |   
+        |______ _/   \_ |       __|__ |    \_    |
     _______  _____  __   _ _____ _______  _____   ______
     |  |  | |     | | \  |   |      |    |     | |_____/
     |  |  | |_____| |  \_| __|__    |    |_____| |    \_
@@ -22,7 +22,7 @@ Typical usage to check whether one of several domain names will expire in less t
     amazon.com expires in 334 days, on Feb 23 12:00:00 2021 GMT
     apple.com expires in 116 days, on Jul 20 12:00:00 2020 GMT
      =>
-     => Some sites expire in less than 170 days:
+     => Some sites expire in less than 170 days or have other issues:
        => apple.com expires in 116 days
      =>
 

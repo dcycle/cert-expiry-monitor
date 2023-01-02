@@ -22,7 +22,7 @@ if [ -z "$ERR" ]; then
   echo " =>"
 else
   >&2 echo " => "
-  >&2 echo " => Some sites expire in less than $DAYS days:"
+  >&2 echo " => Some sites expire in less than $DAYS days or have other issues:"
   IFS=';' read -ra ERRARR <<< "$ERR"
   for SITEERR in "${ERRARR[@]}"; do
     echo "   => $SITEERR"
