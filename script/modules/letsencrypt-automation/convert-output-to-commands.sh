@@ -35,14 +35,14 @@ while IFS= read -r line; do
         read -r FILENAME    # Read the filename on the following line
 
         # Append to dest.txt
-        echo "echo \$'$FILENAME' > $DOCROOT/.well-known/acme-challenge/${FILENAME%%.*}" >> "$DEST_FILE"
+        echo "echo '$FILENAME' > $DOCROOT/.well-known/acme-challenge/${FILENAME%%.*}" >> "$DEST_FILE"
     fi
 
     # Match the line containing the URL
     if [[ $line == "And make it available on your web server at this URL:"* ]]; then
         read -r empty_line  # Read the next line (which should be empty)
         read -r URL        # Read the URL on the following line
-        
+
         # Generate a random cache-buster value
         CACHE_BUSTER=$((RANDOM % 9999 + 1))
 
