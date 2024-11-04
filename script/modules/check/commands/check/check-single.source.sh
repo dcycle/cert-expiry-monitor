@@ -1,3 +1,4 @@
+#!/bin/bash
 MYERR=""
 DATE=$(echo | openssl s_client -servername "$SITE" -connect "$SITE":443 2>/dev/null | openssl x509 -noout -dates | grep notAfter) || MYERR="NOCERT"
 

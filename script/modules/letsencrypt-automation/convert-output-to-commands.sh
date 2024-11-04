@@ -18,8 +18,8 @@ TEST_FILE="$3"
 DOCROOT="$4"
 
 # Clear the destination and test files
-> "$DEST_FILE"
-> "$TEST_FILE"
+echo "" > "$DEST_FILE"
+echo "" > "$TEST_FILE"
 
 # Add the directory creation command to dest.txt
 echo "mkdir -p $DOCROOT/.well-known/acme-challenge" >> "$DEST_FILE"

@@ -31,7 +31,7 @@ empty_file_if_exists() {
     local FILE="$1"
 
     if [[ -e $FILE ]]; then
-        > "$FILE"  # Empty the file
+        echo "" > "$FILE"  # Empty the file
     fi
 }
 
@@ -197,7 +197,7 @@ run_test_case_4() {
 # Function for Empty Source File Test
 run_test_case_5() {
     echo "Running Empty Source File Test..."
-    >./unversioned/test5-source.txt  # Create an empty source file
+    echo "" > ./unversioned/test5-source.txt  # Create an empty source file
     OUTPUT=$($SCRIPT_PATH ./unversioned/test5-source.txt ./unversioned/test5-dest.txt ./unversioned/test5-test.txt ./docroot 2>&1)
 
     # Check for the specific error message

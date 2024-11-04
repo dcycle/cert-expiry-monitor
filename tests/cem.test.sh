@@ -1,3 +1,4 @@
+#!/bin/bash
 set -e
 
 RESULT=$(./cem.sh internal-test /tests/cem/happy)
@@ -13,4 +14,4 @@ RESULT=$(./cem.sh internal-test /tests/cem/sad) || FAIL=1
 
 # even in the case of a failure we clean up before quitting.
 echo "$RESULT" | grep 'INVOKE CALLED' > /dev/null
-echo $FAIL | grep 1 > /dev/null
+echo "$FAIL" | grep 1 > /dev/null
