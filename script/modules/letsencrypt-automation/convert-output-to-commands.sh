@@ -24,10 +24,13 @@ DOCROOT="$4"
 # Add the directory creation command to dest.txt
 echo "mkdir -p $DOCROOT/.well-known/acme-challenge" >> "$DEST_FILE"
 
+# Generate a random cache-buster value
+CACHE_BUSTER=$((RANDOM % 9999 + 1))
+
 # Process the source file. Read lines of source.txt one by one.
 while IFS= read -r line; do
     # Trim trailing whitespace
-    line=$(echo "$line" | sed 's/[[:space:]]*$//')
+    line="${line%"${line##*[![:space:]]}"}"
 
     # Match the line containing the file data
     if [[ $line == "Create a file containing just this data:"* ]]; then
@@ -42,9 +45,6 @@ while IFS= read -r line; do
     if [[ $line == "And make it available on your web server at this URL:"* ]]; then
         read -r empty_line  # Read the next line (which should be empty)
         read -r URL        # Read the URL on the following line
-
-        # Generate a random cache-buster value
-        CACHE_BUSTER=$((RANDOM % 9999 + 1))
 
         # Append to test.txt with the generated cache-buster value
         echo "curl -L \"$URL?cache-buster=$CACHE_BUSTER\"" >> "$TEST_FILE"
