@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ "$HAYSTACK" == "$NEEDLE" ]; then
   echo "[pass] $MESSAGE";
 else

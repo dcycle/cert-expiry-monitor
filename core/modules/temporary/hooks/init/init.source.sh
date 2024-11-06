@@ -1,3 +1,5 @@
+#!/bin/bash
+
 function tmp() {
   RUNID=$(argvalue internalrunid)
 

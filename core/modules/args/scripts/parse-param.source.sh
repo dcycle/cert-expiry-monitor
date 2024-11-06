@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ARG="$1"
 NAME=$(sed 's/=.*$//g' <<< "$ARG")
 NAME=$(sed 's/--//g' <<< "$NAME")

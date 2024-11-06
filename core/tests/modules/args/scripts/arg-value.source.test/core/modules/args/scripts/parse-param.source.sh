@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ "$1" == "test-one" ]; then
   NAME=firstname
   VALUE=firstvalue

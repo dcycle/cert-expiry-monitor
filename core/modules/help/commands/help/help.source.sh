@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ -z "$GlobalARGS" ]; then
   if [ -f "$GlobalSCRIPTDIR"/script/modules/help/help.txt ]; then
     cat "$GlobalSCRIPTDIR"/script/modules/help/help.txt

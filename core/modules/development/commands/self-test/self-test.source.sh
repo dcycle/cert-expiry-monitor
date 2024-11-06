@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ALLTESTS=$(development_get_all_tests)
 
 for f in $ALLTESTS; do

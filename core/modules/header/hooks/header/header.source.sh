@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ -f "$GlobalSCRIPTDIR"/script/modules/header/files/header.txt ]; then
   cat "$GlobalSCRIPTDIR"/script/modules/header/files/header.txt
 else

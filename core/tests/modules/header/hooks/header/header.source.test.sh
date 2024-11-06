@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ERROR=0
 BASE=$(pwd)
 GlobalSCRIPTDIR="$(pwd)"/core/tests/modules/header/hooks/header/header.source.test

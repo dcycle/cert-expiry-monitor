@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo -e ""
 echo -e "Usage (call $GlobalSCRIPTNAME with no additional arguments to get help):"
 echo -e "-----"

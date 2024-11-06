@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Let modules respond to specific events like init, end, etc.
 if ls "$GlobalSCRIPTDIR"/core/modules/*/hooks/"$1"/"$1".source.sh 1> /dev/null 2>&1; then
   for f in "$GlobalSCRIPTDIR"/core/modules/*/hooks/"$1"/"$1".source.sh

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # At this point $GlobalCOMMAND is valid so we can run it.
 
 invoke-all "pre-command-$GlobalCOMMAND"

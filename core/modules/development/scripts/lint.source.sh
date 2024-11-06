@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo '[info] About to get ShellCheck metrics'
 echo '[info] if you are getting a false negative put:'
 echo '[info] => # shellcheck disable=SC2016'

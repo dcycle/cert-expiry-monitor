@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # See https://github.com/koalaman/shellcheck/wiki/SC2144
 set -e
 

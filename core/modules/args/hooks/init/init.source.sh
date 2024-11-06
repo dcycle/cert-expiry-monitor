@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Gets the value of a script parameter, where --parameter=value.
 #
 # 1 will be returned if --parameter was passed without a value;

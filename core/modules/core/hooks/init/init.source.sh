@@ -1,3 +1,5 @@
+#!/bin/bash
+
 function uuid() {
   if [ -f /proc/sys/kernel/random/uuid ]; then
     LocalTEMPID=$(cat /proc/sys/kernel/random/uuid)

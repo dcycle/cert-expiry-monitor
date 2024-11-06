@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [[ "$ERROR" -eq 1 ]]; then
   echo -e "[error] $(basename "$BASH_SOURCE") Error has been detected, returning 1."
   exit 1

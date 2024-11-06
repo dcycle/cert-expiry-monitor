@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Available arguments
 #  * $PARAMS, an array of params like 'a=b', 'c=d'
 

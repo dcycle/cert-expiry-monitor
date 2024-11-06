@@ -1,3 +1,5 @@
+#!/bin/bash
+
 set -e
 
 # start by cycling through all arguments provided by the user.

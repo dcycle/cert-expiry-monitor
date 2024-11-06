@@ -1,3 +1,5 @@
+#!/bin/bash
+
 function debug() {
   source "$GlobalSCRIPTDIR"/core/modules/development/scripts/debug.source.sh "$1"
 }

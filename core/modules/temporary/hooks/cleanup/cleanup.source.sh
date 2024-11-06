@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ -z "$GlobalRUNID" ]; then
   echo -e '[error] the cleanup hook expects GlobalRUNID to be set'
   exit 1;
