@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo -e ""
+# shellcheck disable=SC2154
 echo -e "Usage (call $GlobalSCRIPTNAME with no additional arguments to get help):"
 echo -e "-----"
 echo -e ""
@@ -9,6 +10,7 @@ echo -e ""
 echo -e "Available global arguments:"
 echo -e "-----"
 echo -e ""
+# shellcheck disable=SC2154
 if [ "$("$GlobalSCRIPTDIR"/core/modules/core/scripts/glob-exists.sh "$GlobalSCRIPTDIR"/core/modules/*/arguments/*/README.md)" == 'true' ]; then
   head -n 1 "$GlobalSCRIPTDIR"/core/modules/*/arguments/*/README.md | grep -v == | grep -v '^$'
 else

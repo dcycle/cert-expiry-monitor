@@ -1,6 +1,7 @@
 #!/bin/bash
 
 if [ -z "$GlobalARGS" ]; then
+  # shellcheck disable=SC2154
   if [ -f "$GlobalSCRIPTDIR"/script/modules/help/help.txt ]; then
     cat "$GlobalSCRIPTDIR"/script/modules/help/help.txt
   else
@@ -29,6 +30,7 @@ else
   fi
 
   if [ "$COMMANDEXISTS" == 'false' ]; then
+    # shellcheck disable=SC2154
     echo -e "$GlobalSCRIPTNAME: Invalid command $GlobalARGS"
     echo -e "See '$GlobalSCRIPTNAME usage' for available commands."
     exit 1

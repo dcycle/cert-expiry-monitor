@@ -9,6 +9,7 @@
 # @param $1
 #   The name of parameter.
 function argvalue() {
+  # shellcheck disable=SC2154
   source "$GlobalSCRIPTDIR"/core/modules/args/scripts/arg-value.source.sh "$1"
   if [ -z "$ARGVALUE" ]; then
     echo 0

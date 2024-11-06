@@ -22,6 +22,7 @@ set -e
 SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd -P)"
 
 echo -e "[info] removing $SCRIPTDIR/tmp/test-data directory"
+# shellcheck disable=SC2154
 rm -rf "$GlobalSCRIPTDIR"/tmp/test-*
 echo -e '[info] linting'
 DOCKER=docker

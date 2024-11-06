@@ -7,7 +7,7 @@ shift
 function debug () {
   :
 }
-
+# shellcheck disable=SC1090
 source "$LOCATION"
 
 set
