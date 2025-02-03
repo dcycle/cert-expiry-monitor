@@ -1,10 +1,14 @@
+#!/bin/bash
+
 # Let modules respond to specific events like init, end, etc.
+# shellcheck disable=SC2154
 if ls "$GlobalSCRIPTDIR"/core/modules/*/hooks/"$1"/"$1".source.sh 1> /dev/null 2>&1; then
   for f in "$GlobalSCRIPTDIR"/core/modules/*/hooks/"$1"/"$1".source.sh
     do
       # Cannot call debug() here because invoke-all might be used before
       # functions are available.
       source "$GlobalSCRIPTDIR"/core/modules/development/scripts/debug.source.sh "About to call '$f'." 'full'
+      # shellcheck disable=SC1090
       source "$f"
   done
 else
@@ -17,6 +21,7 @@ if ls "$GlobalSCRIPTDIR"/script/modules/*/hooks/"$1"/"$1".source.sh 1> /dev/null
       # Cannot call debug() here because invoke-all might be used before
       # functions are available.
       source "$GlobalSCRIPTDIR"/core/modules/development/scripts/debug.source.sh "About to call '$f'." 'full'
+      # shellcheck disable=SC1090	
       source "$f"
   done
 else

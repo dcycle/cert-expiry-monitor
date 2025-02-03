@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Gets the value of a script parameter, where --parameter=value.
 #
 # 1 will be returned if --parameter was passed without a value;
@@ -7,6 +9,7 @@
 # @param $1
 #   The name of parameter.
 function argvalue() {
+  # shellcheck disable=SC2154
   source "$GlobalSCRIPTDIR"/core/modules/args/scripts/arg-value.source.sh "$1"
   if [ -z "$ARGVALUE" ]; then
     echo 0

@@ -1,7 +1,10 @@
+#!/bin/bash
+
 ERROR=0
 BASE=$(pwd)
 
-function output() {
+function output() {   
+# shellcheck disable=SC2317
   echo "[$2] $3"
 }
 

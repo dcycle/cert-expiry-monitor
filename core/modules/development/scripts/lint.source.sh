@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo '[info] About to get ShellCheck metrics'
 echo '[info] if you are getting a false negative put:'
 echo '[info] => # shellcheck disable=SC2016'
@@ -8,4 +10,4 @@ echo '[info] => # shellcheck disable=SC2016'
 
 # shellcheck disable=SC2086
 find . -name "*.sh" -print0 | \
-  xargs -0 $DOCKER run --rm -v "$(pwd)":/code dcycle/shell-lint --exclude=SC2034
+  xargs -0 $DOCKER run --rm -v "$(pwd)":/code dcycle/shell-lint:2 --exclude=SC2034

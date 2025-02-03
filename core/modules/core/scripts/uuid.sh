@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Returns a unique string
 
 if [ -f /proc/sys/kernel/random/uuid ]

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ERROR=0
 BASE=$(pwd)
 

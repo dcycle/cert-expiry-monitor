@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ -f "$NEEDLE" ]; then
   echo "[pass] $MESSAGE";
 else

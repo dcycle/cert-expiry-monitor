@@ -1,4 +1,7 @@
+#!/bin/bash
+
 function debug() {
+  # shellcheck disable=SC2154
   source "$GlobalSCRIPTDIR"/core/modules/development/scripts/debug.source.sh "$1"
 }
 

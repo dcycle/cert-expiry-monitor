@@ -31,7 +31,7 @@ empty_file_if_exists() {
     local FILE="$1"
 
     if [[ -e $FILE ]]; then
-        > "$FILE"  # Empty the file
+        echo "" > "$FILE"  # Empty the file
     fi
 }
 
@@ -130,24 +130,20 @@ echo file_two.txt > ./docroot/.well-known/acme-challenge/file_two.txt" >> ./unve
 
   # Define the file and string to search for
   FILE="./unversioned/test2-actual-test.txt"  # Replace with your actual file name
-  SEARCH_STRING2='curl -L "http://example.com/.well-known/acme-challenge/file_one.txt?cache-buster='
+  SEARCH_STRING_ONE='curl -L "http://example.com/.well-known/acme-challenge/file_one.txt?cache-buster='
 
   # Call the function
-  check_string_in_file "$FILE" "$SEARCH_STRING1"
-
-  # Call the function
-  if check_string_in_file "$FILE" "$SEARCH_STRING1"; then
+  if check_string_in_file "$FILE" "$SEARCH_STRING_ONE"; then
     echo "Test case 2.1 passed."
   else
     echo "Test case 2.1 failed."
     return 1  # Return failure
   fi
 
-  SEARCH_STRING2='curl -L "http://example.com/.well-known/acme-challenge/file_two.txt?cache-buster='
-  check_string_in_file "$FILE" "$SEARCH_STRING2"
+  SEARCH_STRING_TWO='curl -L "http://example.com/.well-known/acme-challenge/file_two.txt?cache-buster='
 
   # Call the function
-  if check_string_in_file "$FILE" "$SEARCH_STRING2"; then
+  if check_string_in_file "$FILE" "$SEARCH_STRING_TWO"; then
     echo "Test case 2.2 passed."
     return 0  # Return success
   else
@@ -197,7 +193,7 @@ run_test_case_4() {
 # Function for Empty Source File Test
 run_test_case_5() {
     echo "Running Empty Source File Test..."
-    >./unversioned/test5-source.txt  # Create an empty source file
+    echo "" > ./unversioned/test5-source.txt  # Create an empty source file
     OUTPUT=$($SCRIPT_PATH ./unversioned/test5-source.txt ./unversioned/test5-dest.txt ./unversioned/test5-test.txt ./docroot 2>&1)
 
     # Check for the specific error message

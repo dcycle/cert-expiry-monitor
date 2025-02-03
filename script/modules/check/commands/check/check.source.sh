@@ -1,3 +1,4 @@
+#!/bin/bash
 DAYS=$(argvalue days)
 SITES=$(argvalue sites)
 

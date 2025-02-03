@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ERROR=0
 BASE=$(pwd)
 
@@ -8,9 +10,9 @@ MESSAGE="$BASE/README.md must exist -- there needs to be a README file in the ba
 source ./core/modules/testing/scripts/assert.source.sh
 
 source ./core/modules/testing/scripts/cleanup.source.sh
-
+# shellcheck disable=SC2317
 PARAMS=([0]="--output-test=contains" [1]="a" [2]="space" [3]="--output-test=fully-enclosed" [4]="--output-test=partially" [5]="enclosed")
-
+# shellcheck disable=SC2317
 COMMAND=-output-test=onedash
-
+# shellcheck disable=SC2317
 ARGS=([0]="output-test-no-dash")

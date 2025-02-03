@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ERROR=0
 BASE=$(pwd)
 
@@ -15,6 +17,7 @@ for i in $(find ./script/modules -maxdepth 1 -type d)
 do
   NEEDLE="$i"/README.md
   MESSAGE="$i/README.md must exist -- all directories need to have a README file."
+  # shellcheck disable=SC1091
   source ./script/modules/testing/scripts/assert-file.source.sh
 done
 

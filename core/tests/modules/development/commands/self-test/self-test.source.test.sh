@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ERROR=0
 BASE=$(pwd)
 GlobalSCRIPTDIR="$BASE"/core/tests/modules/development/commands/self-test/self-test.source.test

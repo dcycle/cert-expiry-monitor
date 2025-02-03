@@ -1,3 +1,5 @@
+#!/bin/bash
+
 set -e
 
 # start by cycling through all arguments provided by the user.
@@ -11,7 +13,8 @@ while [ $# -gt 0 ]; do
       UNVALIDATEDCOMMAND=$1
       debug "Command is $COMMAND"
     else
-      GlobalARGS+=($1)
+      
+      GlobalARGS+=("$1")
       debug "$1 is an arg"
     fi
   fi
@@ -21,5 +24,5 @@ done
 if [ -z "$UNVALIDATEDCOMMAND" ]; then
   UNVALIDATEDCOMMAND=help
 fi
-
+# shellcheck disable=SC2154
 source "$GlobalSCRIPTDIR"/core/modules/args/scripts/validate-command.source.sh

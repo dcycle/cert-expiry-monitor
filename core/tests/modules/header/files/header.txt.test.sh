@@ -1,3 +1,5 @@
+#!/bin/bash
+
 BASE=$(pwd)
 
 cat "$BASE"/script/modules/header/files/header.txt

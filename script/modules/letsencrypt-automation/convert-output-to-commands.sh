@@ -18,14 +18,18 @@ TEST_FILE="$3"
 DOCROOT="$4"
 
 # Clear the destination and test files
-> "$DEST_FILE"
-> "$TEST_FILE"
+echo "" > "$DEST_FILE"
+echo "" > "$TEST_FILE"
 
 # Add the directory creation command to dest.txt
 echo "mkdir -p $DOCROOT/.well-known/acme-challenge" >> "$DEST_FILE"
 
 # Generate a random cache-buster value
 CACHE_BUSTER=$((RANDOM % 9999 + 1))
+
+# Track if any relevant data was written (start both as false since mkdir is always written)
+DEST_FILE_WRITTEN=false
+TEST_FILE_WRITTEN=false
 
 # Process the source file. Read lines of source.txt one by one.
 while IFS= read -r line; do
@@ -39,6 +43,7 @@ while IFS= read -r line; do
 
         # Append to dest.txt
         echo "echo '$FILENAME' > $DOCROOT/.well-known/acme-challenge/${FILENAME%%.*}" >> "$DEST_FILE"
+        DEST_FILE_WRITTEN=true
     fi
 
     # Match the line containing the URL
@@ -48,11 +53,12 @@ while IFS= read -r line; do
 
         # Append to test.txt with the generated cache-buster value
         echo "curl -L \"$URL?cache-buster=$CACHE_BUSTER\"" >> "$TEST_FILE"
+        TEST_FILE_WRITTEN=true
     fi
 done < "$SOURCE_FILE"
 
 # Check if both files have been written
-if [[ -s "$DEST_FILE" && -s "$TEST_FILE" ]]; then
+if $DEST_FILE_WRITTEN && $TEST_FILE_WRITTEN; then
     echo "Commands written to $DEST_FILE and $TEST_FILE."
 else
     echo "An error occurred or files are empty."
